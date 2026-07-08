@@ -13,6 +13,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+        _ name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
       - name: Print Welcome Message
         run: echo "Welcome to GitHub Actions"
 
@@ -21,3 +27,9 @@ jobs:
 
       - name: List Files
         run: ls -la
+
+      - name: Compile Java
+        run: javac Hello.java
+
+      - name: Run Java Program
+        run: java Hello
