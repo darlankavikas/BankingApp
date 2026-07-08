@@ -1,4 +1,4 @@
-name: Banking CI Pipeline
+name: Java CI Pipeline
 
 on:
   push:
@@ -20,14 +20,8 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Print Welcome Message
-        run: echo "Welcome to GitHub Actions"
-
-      - name: Display Current Directory
-        run: pwd
-
-      - name: List Files
-        run: ls -la
+      - name: Show Java Version
+        run: java -version
 
       - name: Compile Java
         run: javac Hello.java
